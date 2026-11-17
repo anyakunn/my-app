@@ -3,7 +3,7 @@ name: Build APK
 on:
   push:
     branches: [main]
-  workflow_dispatch:   # memungkinkan tombol "Run workflow" di browser
+  workflow_dispatch:
 
 jobs:
   build:
@@ -24,9 +24,6 @@ jobs:
         with:
           distribution: temurin
           java-version: 21
-
-      - name: Siapkan Android SDK
-        uses: android-actions/setup-android@v3
 
       - name: Install dependency
         run: npm ci
